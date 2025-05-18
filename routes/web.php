@@ -8,6 +8,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login',function(){
+
+    return redirect()->to('/');
+});
+
+Route::get('/register',function(){
+
+    return redirect()->to('/');
+});
+
+
+
+
+Route::get('/forgot-password',function(){
+
+    return redirect()->to('/');
+})->name('login');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
