@@ -16,6 +16,30 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('images/preview.png') }}">
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="wibook">
+    <meta name="twitter:description" content="Secure, blazing-fast Laravel app with Tailwind CSS.">
+    <meta name="twitter:image" content="{{ asset('images/preview.png') }}">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wibook Tech",
+        "url": "{{ url('/') }}",
+        "logo": "{{ asset('/image/sitelogo.png') }}",
+        "sameAs": [
+            "https://qr-code.wibook.co.tz/",
+            "https://app.wibook.co.tz/"
+        ]
+    }
+    </script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
@@ -234,9 +258,9 @@
                             <div class="mb-3">
                                 <span class="text-lg font-medium text-brand-green">Free</span>
                             </div>
-                            <button class="bg-brand-green text-white px-4 py-2 rounded-md text-sm hover:bg-brand-green hover:bg-opacity-90 transition-colors">
+                            <a href="https://qr-code.wibook.co.tz/" target="_blank" rel="noopener" class="bg-brand-green text-white px-4 py-2 rounded-md text-sm hover:bg-brand-green hover:bg-opacity-90 transition-colors">
                                 Try Now
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -256,9 +280,9 @@
                             <div class="mb-3">
                                 <span class="text-lg font-medium text-brand-green">Free</span>
                             </div>
-                            <button class="bg-brand-green text-white px-4 py-2 rounded-md text-sm hover:bg-brand-green hover:bg-opacity-90 transition-colors">
+                            <a href="https://app.wibook.co.tz/" target="_blank" rel="noopener" class="bg-brand-green text-white px-4 py-2 rounded-md text-sm hover:bg-brand-green hover:bg-opacity-90 transition-colors">
                                 Get Started
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -290,7 +314,7 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 <!-- Team Member 1 -->
                 <div class="bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 overflow-hidden group text-center">
                     <!-- Member Photo -->
@@ -329,6 +353,33 @@
                         <p class="text-brand-green text-sm font-medium mb-3">CTO</p>
                         <p class="text-sm text-gray-600 mb-4 leading-relaxed">
                             Expert in software architecture and development, leading our technical innovation.
+                        </p>
+                        <!-- Social Links -->
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-brand-green transition-colors">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-brand-green transition-colors">
+                                <i class="fab fa-github text-lg"></i>
+                            </a>
+                            <a href="mailto:info.wibook@gmail.com" class="text-gray-400 hover:text-brand-green transition-colors">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 overflow-hidden group text-center">
+                    <!-- Member Photo -->
+                    <div class="h-48 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                        <img src="{{ asset('/image/kalolo.jpeg') }}" alt="Wilbert Isdory" class="w-32 h-32 rounded-full object-cover shadow-lg" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Wilbert Isdory</h3>
+                        <p class="text-brand-green text-sm font-medium mb-3">Project Manager &amp; Team Leader</p>
+                        <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                            Driving projects to success through leadership, planning, and collaboration.
                         </p>
                         <!-- Social Links -->
                         <div class="flex justify-center space-x-3">
